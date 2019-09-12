@@ -1,0 +1,78 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+img {
+    pointer-events: none !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    // background-color: #ffa800;
+    height: 100%;
+    width: 7.5rem;
+    margin: 0 auto;
+    position: relative;
+    .tips {
+        z-index: 999;
+        background-color: rgba(0, 0, 0, .9);
+        position: fixed;
+        width: 7.5rem;
+        height: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .top {
+        // background: url('../img/bg_xiazai.png') no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        img {
+            width: 100%;
+            // height: 100%;
+        }
+    }
+    .button {
+        z-index: 2;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5.84rem;
+        background: url('../img/bg_yun.png') no-repeat;
+        // pointer-events: none !important;
+        background-size: 100% 100%;
+        overflow: hidden;
+        .iphone,
+        .android {
+            width: 3rem;
+            height: .88rem;
+            position: absolute;
+            top: 3rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .iphone {
+            left: .4rem
+        }
+        .android {
+            right: .4rem
+        }
+    }
+}
+
+.disno {
+    display: none;
+}

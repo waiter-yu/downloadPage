@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>《大师管家》APP下载</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="top">
+            <img src="./img/bg_xiazai.png" alt="">
+        </div>
+        <div class="button">
+            <div class="iphone"><img src="./img/but_ios.png" alt=""></div>
+            <div class="android"><img src="./img/but_android.png" alt=""></div>
+            <!-- <img class="yun" src="./img/bg_yun.png" alt="" style="height: 100%"> -->
+        </div>
+    </div>
+
+    <script>
+        fnResize()
+        window.onresize = function() {
+            fnResize()
+        }
+
+
+        function fnResize() {
+            var deviceWidth = document.documentElement.clientWidth || window.innerWidth
+            if (deviceWidth >= 750) {
+                deviceWidth = 500
+            }
+            if (deviceWidth <= 320) {
+                deviceWidth = 320
+            }
+            document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px'
+        }
+        document.body.addEventListener('touchmove', function(e) {
+                if (location.href.indexOf("popular") != -1) {
+                    console.log(1);
+                    //需要滑动的区域
+                    var top = el.scrollTop; //对象最顶端和窗口最顶端之间的距离 
+                    var scrollH = el.scrollHeight; //含滚动内容的元素大小
+                    var offsetH = el.offsetHeight; //网页可见区域高
+                    var cScroll = top + offsetH; //当前滚动的距离
+
+                    //被滑动到最上方和最下方的时候
+                    if (top == 0) {
+                        top = 1; //0～1之间的小数会被当成0
+                    } else if (cScroll === scrollH) {
+                        el.scrollTop = top - 0.1;
+                    }
+
+                }
+
+                e.preventDefault(); //阻止默认事件(上下滑动)
+
+            }, {
+                passive: false
+            }) //passive防止阻止默认事件不生效
+        document.getElementsByClassName('android')[0].onclick = function() {
+            location.href = "https://sj.qq.com/myapp/detail.htm?apkName=gz.yry.masterAsk"
+        }
+        document.getElementsByClassName('iphone')[0].onclick = function() {
+            location.href = "https://apps.apple.com/cn/app/id1470575354"
+        }
+    </script>
+</body>
+
+</html>
